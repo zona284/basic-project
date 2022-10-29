@@ -18,6 +18,13 @@ Globally the project has the following top level packages:
 - `presentation` : Contains Views (Activity, Fragment), Adapter, ViewModel.
 - `utils` : Contains helper extension.
 
+#### New Feature Guidance
+- [ ] If there’s new feature with new remote or local data source, create feature package inside `presentation` package.
+- [ ] Define new implementation of new Api inside `ApiService` and `RemoteDataSource` if any.
+- [ ] If there's new local data, create new Entity and Dao classes and then define new implementation inside `LocalDataSource`.
+- [ ] If there's new Repository, define singleton/factory object inside `core/di/CoreModule`.
+- [ ] Create Unit Test inside `src/test` and instrumented or UI test inside `src/androidTest`.
+
 ## Tech debt
 - Modularization
 - Implement UseCase when the project is more complex
