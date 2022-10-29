@@ -19,6 +19,7 @@ Globally the project has the following top level packages:
 - `utils` : Contains helper extension.
 
 ## Tech debt
+- Modularization
 - Implement UseCase when the project is more complex
 - Better UI TestCase, especially for testing navigation
 
