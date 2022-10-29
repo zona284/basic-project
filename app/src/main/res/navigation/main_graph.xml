@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.rakha.basicproject.presentation.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_moviesFragment"
+            app:destination="@id/nav_main"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <navigation android:id="@+id/nav_main"
+        app:startDestination="@id/moviesFragment">
+        <fragment
+            android:id="@+id/moviesFragment"
+            android:name="com.rakha.basicproject.presentation.movies.MoviesFragment"
+            android:label="fragment_home"
+            tools:layout="@layout/fragment_movies" >
+            <action
+                android:id="@+id/action_moviesFragment_to_moviesDetailFragment"
+                app:destination="@id/moviesDetailFragment"
+                app:enterAnim="@android:anim/slide_in_left"
+                app:popExitAnim="@android:anim/slide_out_right" />
+            <action
+                android:id="@+id/action_moviesFragment_to_favoriteMoviesFragment"
+                app:destination="@id/favoriteMoviesFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/moviesDetailFragment"
+            android:name="com.rakha.basicproject.presentation.moviesDetail.MoviesDetailFragment"
+            android:label="fragment_movies_detail"
+            tools:layout="@layout/fragment_movies_detail" >
+            <argument
+                android:name="movie"
+                app:argType="com.rakha.basicproject.core.domain.model.Movies" />
+        </fragment>
+        <fragment
+            android:id="@+id/favoriteMoviesFragment"
+            android:name="com.rakha.basicproject.presentation.favoriteMovies.FavoriteMoviesFragment"
+            android:label="fragment_favorite_movies"
+            tools:layout="@layout/fragment_favorite_movies">
+            <action
+                android:id="@+id/action_favoriteMoviesFragment_to_moviesDetailFragment"
+                app:destination="@id/moviesDetailFragment" />
+        </fragment>
+    </navigation>
+</navigation>
