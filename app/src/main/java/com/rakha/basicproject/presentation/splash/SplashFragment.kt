@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.rakha.basicproject.R
 import com.rakha.basicproject.databinding.FragmentSplashBinding
 import com.rakha.basicproject.presentation.base.BaseFragment
@@ -30,7 +31,7 @@ class SplashFragment : BaseFragment() {
         lifecycleScope.launch{
             binding.tvSplash.startAnimation(animation)
             delay(2000)
-            navController.navigate(SplashFragmentDirections.actionSplashFragmentToMoviesFragment())
+            findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToMoviesFragment())
         }
     }
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rakha.basicproject.R
 import com.rakha.basicproject.core.data.Resource
@@ -33,11 +34,11 @@ class FavoriteMoviesFragment : BaseFragment() {
     override fun initView() {
         setupToolbar(getString(R.string.favorite), binding.toolbar)
         binding.toolbar.setNavigationOnClickListener {
-            navController.navigateUp()
+            findNavController().navigateUp()
         }
 
         moviesAdapter = FavoriteMoviesAdapter { data ->
-            navController.navigate(FavoriteMoviesFragmentDirections.actionFavoriteMoviesFragmentToMoviesDetailFragment(data))
+            findNavController().navigate(FavoriteMoviesFragmentDirections.actionFavoriteMoviesFragmentToMoviesDetailFragment(data))
         }
 
         binding.rvMovies.apply {
@@ -49,7 +50,7 @@ class FavoriteMoviesFragment : BaseFragment() {
             if(it is Resource.Success) {
                 moviesAdapter.submitData(it.data)
                 binding.lyEmpty.isVisible = it.data?.isEmpty() == true
-                binding.btnBack.setOnClickListener { navController.navigateUp() }
+                binding.btnBack.setOnClickListener { findNavController().navigateUp() }
             }
         }
     }

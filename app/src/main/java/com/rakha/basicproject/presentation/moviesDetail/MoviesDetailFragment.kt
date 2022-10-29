@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.rakha.basicproject.R
 import com.rakha.basicproject.databinding.FragmentMoviesDetailBinding
@@ -31,7 +32,7 @@ class MoviesDetailFragment: BaseFragment() {
         binding.apply {
             setupToolbar(args.movie.title?:"", toolbar)
             toolbar.setNavigationOnClickListener {
-                navController.navigateUp()
+                findNavController().navigateUp()
             }
             tvTitle.text = args.movie.originalTitle
             tvOverview.text = args.movie.overview

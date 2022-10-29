@@ -4,18 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rakha.basicproject.R
 import com.rakha.basicproject.databinding.FragmentMoviesBinding
 import com.rakha.basicproject.presentation.base.BaseFragment
 import com.rakha.basicproject.presentation.movies.adapter.LoadingStateAdapter
 import com.rakha.basicproject.presentation.movies.adapter.MoviesPagingAdapter
-import com.rakha.basicproject.utils.GlideApp
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -39,12 +35,12 @@ class MoviesFragment : BaseFragment() {
             tvPageTitle.text = getString(R.string.app_name)
             ivPageAction.isVisible = true
             ivPageAction.setOnClickListener {
-                navController.navigate(MoviesFragmentDirections.actionMoviesFragmentToFavoriteMoviesFragment())
+                findNavController().navigate(MoviesFragmentDirections.actionMoviesFragmentToFavoriteMoviesFragment())
             }
         }
 
         moviesAdapter = MoviesPagingAdapter { data ->
-            navController.navigate(MoviesFragmentDirections.actionMoviesFragmentToMoviesDetailFragment(data))
+            findNavController().navigate(MoviesFragmentDirections.actionMoviesFragmentToMoviesDetailFragment(data))
         }
 
 

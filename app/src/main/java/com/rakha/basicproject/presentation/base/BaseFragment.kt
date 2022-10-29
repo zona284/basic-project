@@ -17,11 +17,9 @@ import androidx.navigation.fragment.findNavController
  *   25/10/22
  */
 abstract class BaseFragment: Fragment() {
-    protected lateinit var navController: NavController
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = findNavController()
         initView()
         initBackPressed()
     }
@@ -41,7 +39,7 @@ abstract class BaseFragment: Fragment() {
     }
 
     protected open fun onBackPressed() {
-        navController.navigateUp()
+        findNavController().navigateUp()
     }
 
     private fun initBackPressed() {
