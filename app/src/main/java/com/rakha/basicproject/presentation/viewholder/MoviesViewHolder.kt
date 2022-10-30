@@ -20,7 +20,7 @@ class MoviesViewHolder(
                 tvTitle.text = it.title
                 ivBackdrop.loadImageFromUrl(generateImageUrl(it.backdropPath?:""))
             }
-            binding.root.setOnClickListener {
+            binding.cvMovie.setOnClickListener {
                 itemClicked(movies)
             }
         }

@@ -5,5 +5,6 @@
     <string name="favorite">Your Favorite</string>
     <string name="message_empy_favorite">Oops! Your Favorite Movie is Empty.</string>
     <string name="label_add_movie">Add Movie</string>
+    <string name="label_empty_movies">No movies are available</string>
 
 </resources>

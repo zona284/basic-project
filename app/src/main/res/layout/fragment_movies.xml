@@ -13,13 +13,13 @@
             android:id="@+id/rl_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/purple_700"
+            android:background="?attr/colorPrimary"
             android:elevation="4dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" >
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tv_page_title"
@@ -40,12 +40,12 @@
                 android:id="@+id/iv_page_action"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="@dimen/dimen8"
+                android:gravity="center"
                 android:padding="@dimen/dimen8"
-                android:visibility="visible"
-                android:src="@drawable/ic_heart_red"/>
+                android:src="@drawable/ic_heart_red"
+                android:visibility="visible" />
 
         </RelativeLayout>
 
@@ -56,13 +56,63 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rl_toolbar">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_movies"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:itemCount="10"
-                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_list_movies" />
+                android:layout_height="match_parent">
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:shimmer_auto_start="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/shimmer_item_list_movies" />
+
+                        <include layout="@layout/shimmer_item_list_movies" />
+
+                        <include layout="@layout/shimmer_item_list_movies" />
+
+                        <include layout="@layout/shimmer_item_list_movies" />
+
+                        <include layout="@layout/shimmer_item_list_movies" />
+
+                        <include layout="@layout/shimmer_item_list_movies" />
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_movies"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:itemCount="10"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_list_movies" />
+
+                <TextView
+                    android:id="@+id/tv_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/label_empty_movies"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/label_empty_movies"
+                    android:visibility="gone" />
+            </RelativeLayout>
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
