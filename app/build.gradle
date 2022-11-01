@@ -6,14 +6,14 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk compile_sdk
 
     defaultConfig {
         applicationId "com.rakha.basicproject"
-        minSdk 22
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        minSdk min_sdk
+        targetSdk target_sdk
+        versionCode app_version_code
+        versionName app_version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
