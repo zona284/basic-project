@@ -8,7 +8,7 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rakha.basicproject.R
-import com.rakha.basicproject.core.data.Resource
+import com.rakha.core.data.Resource
 import com.rakha.basicproject.databinding.FragmentFavoriteMoviesBinding
 import com.rakha.basicproject.presentation.base.BaseFragment
 import com.rakha.basicproject.presentation.favoriteMovies.adapter.FavoriteMoviesAdapter

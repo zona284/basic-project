@@ -3,8 +3,8 @@ package com.rakha.basicproject.presentation.moviesDetail
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rakha.basicproject.core.domain.model.Movies
-import com.rakha.basicproject.core.domain.repository.MoviesRepository
+import com.rakha.core.domain.model.Movies
+import com.rakha.core.domain.repository.MoviesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch

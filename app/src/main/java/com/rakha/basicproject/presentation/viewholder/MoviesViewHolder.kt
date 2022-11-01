@@ -1,7 +1,7 @@
 package com.rakha.basicproject.presentation.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
-import com.rakha.basicproject.core.domain.model.Movies
+import com.rakha.core.domain.model.Movies
 import com.rakha.basicproject.databinding.ItemListMoviesBinding
 import com.rakha.basicproject.utils.generateImageUrl
 import com.rakha.basicproject.utils.loadImageFromUrl

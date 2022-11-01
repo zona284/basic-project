@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
-import com.rakha.basicproject.core.domain.repository.MoviesRepository
+import com.rakha.core.domain.repository.MoviesRepository
 
 /**
  *   Created By rakha

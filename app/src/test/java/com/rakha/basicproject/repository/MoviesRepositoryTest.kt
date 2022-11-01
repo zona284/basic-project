@@ -1,13 +1,13 @@
 package com.rakha.basicproject.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.rakha.basicproject.core.data.source.local.LocalDataSource
-import com.rakha.basicproject.core.data.source.local.entity.MoviesEntity
-import com.rakha.basicproject.core.data.source.remote.RemoteDataSource
-import com.rakha.basicproject.core.datamapper.MoviesDataMapper
-import com.rakha.basicproject.core.domain.model.Movies
-import com.rakha.basicproject.core.domain.repository.MoviesRepository
-import com.rakha.basicproject.core.domain.repository.MoviesRepositoryImpl
+import com.rakha.core.data.source.local.LocalDataSource
+import com.rakha.core.data.source.local.entity.MoviesEntity
+import com.rakha.core.data.source.remote.RemoteDataSource
+import com.rakha.core.datamapper.MoviesDataMapper
+import com.rakha.core.domain.model.Movies
+import com.rakha.core.domain.repository.MoviesRepository
+import com.rakha.core.domain.repository.MoviesRepositoryImpl
 import com.rakha.basicproject.helper.TestCoroutineRule
 import junit.framework.TestCase.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi

@@ -1,9 +1,9 @@
 package com.rakha.basicproject
 
 import android.app.Application
-import com.rakha.basicproject.core.di.databaseModule
-import com.rakha.basicproject.core.di.networkModule
-import com.rakha.basicproject.core.di.repositoryModule
+import com.rakha.core.di.databaseModule
+import com.rakha.core.di.networkModule
+import com.rakha.core.di.repositoryModule
 import com.rakha.basicproject.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger

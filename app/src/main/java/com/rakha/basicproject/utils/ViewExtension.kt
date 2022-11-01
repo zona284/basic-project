@@ -2,7 +2,7 @@ package com.rakha.basicproject.utils
 
 import android.content.Context
 import android.widget.ImageView
-import com.rakha.basicproject.BuildConfig
+import com.rakha.core.BuildConfig
 
 /**
  *   Created By rakha

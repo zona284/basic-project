@@ -1,9 +1,9 @@
 package com.rakha.basicproject.presentation.favoriteMovies
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.rakha.basicproject.core.data.Resource
-import com.rakha.basicproject.core.domain.model.Movies
-import com.rakha.basicproject.core.domain.repository.MoviesRepository
+import com.rakha.core.data.Resource
+import com.rakha.core.domain.model.Movies
+import com.rakha.core.domain.repository.MoviesRepository
 import com.rakha.basicproject.helper.TestCoroutineRule
 import com.rakha.basicproject.helper.getOrAwaitValue
 import junit.framework.TestCase.assertEquals

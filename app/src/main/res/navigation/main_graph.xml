@@ -42,7 +42,7 @@
             tools:layout="@layout/fragment_movies_detail" >
             <argument
                 android:name="movie"
-                app:argType="com.rakha.basicproject.core.domain.model.Movies" />
+                app:argType="com.rakha.core.domain.model.Movies" />
         </fragment>
         <fragment
             android:id="@+id/favoriteMoviesFragment"

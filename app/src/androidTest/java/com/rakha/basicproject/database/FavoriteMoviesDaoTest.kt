@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.rakha.basicproject.core.data.source.local.entity.MoviesEntity
-import com.rakha.basicproject.core.data.source.local.room.FavoriteMoviesDao
-import com.rakha.basicproject.core.data.source.local.room.MainDatabase
+import com.rakha.core.data.source.local.entity.MoviesEntity
+import com.rakha.core.data.source.local.room.FavoriteMoviesDao
+import com.rakha.core.data.source.local.room.MainDatabase
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.hamcrest.CoreMatchers.equalTo

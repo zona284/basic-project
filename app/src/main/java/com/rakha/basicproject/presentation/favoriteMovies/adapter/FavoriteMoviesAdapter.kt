@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.rakha.basicproject.core.domain.model.Movies
+import com.rakha.core.domain.model.Movies
 import com.rakha.basicproject.databinding.ItemListMoviesBinding
 import com.rakha.basicproject.presentation.viewholder.MoviesViewHolder
 

@@ -1,13 +1,10 @@
 package com.rakha.basicproject.presentation.moviesDetail
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.rakha.basicproject.core.data.Resource
-import com.rakha.basicproject.core.domain.model.Movies
-import com.rakha.basicproject.core.domain.repository.MoviesRepository
+import com.rakha.core.domain.model.Movies
+import com.rakha.core.domain.repository.MoviesRepository
 import com.rakha.basicproject.helper.TestCoroutineRule
 import com.rakha.basicproject.helper.getOrAwaitValue
-import com.rakha.basicproject.presentation.favoriteMovies.FavoriteMoviesViewModel
-import junit.framework.TestCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
@@ -19,9 +16,7 @@ import org.junit.Assert.*
 import org.junit.Rule
 import org.mockito.Mock
 import org.mockito.Mockito
-import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
-import org.mockito.internal.verification.VerificationModeFactory.times
 
 /**
  * Created By rakha
