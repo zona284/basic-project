@@ -1,4 +1,4 @@
-package com.rakha.basicproject.database
+package com.rakha.core.database
 
 import android.content.Context
 import androidx.room.Room
