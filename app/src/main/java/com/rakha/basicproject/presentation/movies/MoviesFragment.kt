@@ -14,6 +14,7 @@ import com.rakha.basicproject.databinding.FragmentMoviesBinding
 import com.rakha.basicproject.presentation.base.BaseFragment
 import com.rakha.basicproject.presentation.movies.adapter.LoadingStateAdapter
 import com.rakha.basicproject.presentation.movies.adapter.MoviesPagingAdapter
+import com.xwray.groupie.GroupieAdapter
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -81,9 +82,64 @@ class MoviesFragment : BaseFragment() {
                 }
             }
         }
+
+        val groupAdapter = GroupieAdapter()
+        populateData().forEach {
+            it.name?.let { name -> groupAdapter.add(HeaderItem(name)) }
+            it.step?.map { step -> StepItem(step) }?.let { data ->
+                groupAdapter.addAll(data)
+            }
+
+        }
+
+        binding.rvSample.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = groupAdapter
+        }
     }
 
     override fun onBackPressed() {
         requireActivity().finish()
     }
+
+    fun populateData(): List<Item> {
+        return listOf(
+            Item(
+                name = "",
+                step = listOf(
+                    Steps(
+                        number = 1,
+                        step = "A"
+                    ),
+                    Steps(
+                        number = 2,
+                        step = "B"
+                    )
+                )
+            ),
+            Item(
+                name = "Freak",
+                step = listOf(
+                    Steps(
+                        number = 1,
+                        step = "C"
+                    ),
+                    Steps(
+                        number = 2,
+                        step = "D"
+                    )
+                )
+            )
+        )
+    }
+
+    data class Item(
+        val name : String? = null,
+        val step: List<Steps>? = null
+    )
+
+    data class Steps(
+        val number: Int? = null,
+        val step: String? = null
+    )
 }
